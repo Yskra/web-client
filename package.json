@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "emulator": "vite build --mode emulator",
-    "build": "vite build && ares-package dist --outdir bin"
+    "build": "vite build"
   },
   "browserslist": [
     "defaults",
