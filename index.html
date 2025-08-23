@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="">
+<head>
+    <meta charset="UTF-8" />
+    <title>Yskra</title>
+</head>
+  <body class="font-size-[--fontsize]">
+    <div id="app" class="flex flex-col items-center justify-center h-screen w-screen">
+        <form id="urlForm">
+        <div class="w-200 flex flex-col items-center justify-center">
+            <label class="floating-label mb-4 w-full">
+                <input type="url"
+                       placeholder="http://192.168.1.100:8080"
+                       class="input input-xl w-full validator text-lg"
+                       required
+                       pattern="^(https?:\/\/)(.+?)(\.(.+?))?([\/].*)*\/?$"
+                       title="https?://domain"
+                       name="url"
+                />
+                <span data-i18n="yskra_address" style="font-size: var(--text-size-base)">Yskra address</span>
+                <p class="validator-hint" data-i18n="must_be_valid_url">Must be valid URL</p>
+            </label>
+        </div>
+            <div>
+                <fieldset class="fieldset bg-base-100  w-full my-4">
+                    <label class="label flex justify-between">
+                        <span data-i18n="auto_connect" class="text-sm">Auto connect</span>
+                        <input type="checkbox" checked="checked" class="toggle toggle-xl toggle-primary" id="auto-connect" />
+                    </label>
+                </fieldset>
+                <button class="btn btn-primary btn-xl w-full text-lg" data-i18n="connect">Connect</button>
+                <p id="connect-status" class="mt-2 h-2 text-sm"></p>
+            </div>
+        </form>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

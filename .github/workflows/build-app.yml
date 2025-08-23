@@ -1,0 +1,35 @@
+name: Build Web Application
+
+on:
+  workflow_call:
+    outputs:
+      artifact:
+        description: ID uploaded artifact
+        value: ${{ jobs.build.outputs.artifact }}
+
+env:
+  build-dir: dist/
+  artifact-name: web-app
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    outputs:
+      artifact: ${{ steps.artifact.outputs.artifact-id }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          cache: 'pnpm'
+
+      - run: pnpm install --production --frozen-lockfile
+      - run: pnpm run build
+
+      - id: artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.artifact-name }}
+          path: ${{ env.build-dir }}

@@ -1,0 +1,12 @@
+{
+  "yskra_address": "Yskra address",
+  "must_be_valid_url": "Must be valid URL",
+  "auto_connect": "Auto connect",
+  "connect": "Connect",
+  "cancel": "Cancel",
+  "checking": "Checking...",
+  "invalid_url": "Invalid URL",
+  "not_available": "Address is not available",
+  "preparing_connection": "Preparing for connection...",
+  "connected": "Connected"
+}

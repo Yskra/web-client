@@ -1,0 +1,37 @@
+name: Build IPK
+
+on:
+  workflow_call:
+    inputs:
+      web-app-artifact:
+        description: ID uploaded artifact with static files web application
+        required: true
+        type: string
+env:
+  directory: dist
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    outputs:
+      artifact: ${{ steps.artifact.outputs.artifact-id }}
+    steps:
+      - name: Download Web app by ID
+        uses: actions/download-artifact@v5
+        with:
+          artifact-ids: ${{ inputs.web-app-artifact }}
+          path: ${{ env.directory }}
+          merge-multiple: true
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          cache: 'npm'
+
+      - name: Build IPK
+        run: npx --package=@webos-tools/cli ares-package ${{ env.directory }} --outdir .
+
+      - id: artifact
+        uses: actions/upload-artifact@v4
+        with:
+          path: '*.ipk'

@@ -1,0 +1,18 @@
+:root {
+    --fontsize: 20px;
+    --depth: 0;
+    --noise: 0;
+
+    --text-size-lg: 1.125rem;
+    --text-size-xl: 1.25rem;
+    --text-size-xs: 1rem;
+    --text-size-sm: calc(1rem + 4px);
+    --text-size-base: calc(1rem + 10px);
+
+    font-size: var(--fontsize);
+}
+
+button, input, a, .btn:focus, .input:focus, .toggle:focus {
+    outline-width: 0.3rem;
+    outline-offset: 0.2rem;
+}

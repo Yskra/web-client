@@ -1,0 +1,12 @@
+{
+  "yskra_address": "Адрес Yskra",
+  "must_be_valid_url": "Должен быть действительный URL",
+  "auto_connect": "Автоматическое подключение",
+  "connect": "Подключение",
+  "cancel": "Отмена",
+  "checking": "Проверка...",
+  "invalid_url": "Неверный URL",
+  "not_available": "Адрес недоступен",
+  "preparing_connection": "Подготовка к подключению...",
+  "connected": "Подключено"
+}

@@ -1,0 +1,16 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-app:
+    uses: ./.github/workflows/build-app.yml
+
+  build-ipk:
+    needs: build-app
+    uses: ./.github/workflows/build-ipk.yml
+    with:
+      web-app-artifact: ${{ needs.build.outputs.artifact }}

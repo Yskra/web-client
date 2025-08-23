@@ -1,0 +1,10 @@
+{
+  "id": "dev.yskra.client",
+  "version": "1.0.0",
+  "vendor": "Yskra Team",
+  "type": "web",
+  "main": "index.html",
+  "title": "Yskra",
+  "icon": "icon.png",
+  "largeIcon": "largeIcon.png"
+}
